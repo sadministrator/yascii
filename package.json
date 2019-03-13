@@ -1,0 +1,15 @@
+{
+  "name": "yascii",
+  "version": "0.0.1",
+  "description": "A javascript utility that converts images into ascii representations.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "pics",
+    "ascii"
+  ],
+  "author": "Marco Serrano",
+  "license": "ISC"
+}
