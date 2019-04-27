@@ -11,14 +11,14 @@ $(document).ready(function() {
     canvas.width = img.width;
     canvas.height = img.height;
 
-    canvas2.width = 1300;
-    canvas2.height = 1000;
+    canvas2.width = 1000;
+    canvas2.height = 600;
 
     ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
 
     var imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
 
-    ctx2.font = '60px monospace';
+    ctx2.font = '30px monospace';
 
     for (i = 0; i < img.height; i++){
       for (j = 0; j < img.width; j++){
@@ -28,7 +28,21 @@ $(document).ready(function() {
       }
     }
 
-    //canvas2.width = ctx2.measureText();
+    // Printing the pic with ascii
+    for (i = 0; i < img.height; i+=2){
+      for (j = 0; j < img.width; j+=2){
+        var elem = document.createElement('SPAN');
+        elem.innerHTML = '#';
+        elem.style.color = 'rgba(' + getPixelXY(imgData, j, i) + ')';
+        elem.style.fontSize = '10px';
+        document.body.appendChild(elem);
+        console.log(j + ' ' + i + " | ");
+      }
+      var newLine = document.createElement('BR');
+      document.body.appendChild(newLine);
+      console.log(' BR \n')
+
+    }
 
     console.log('width: ' + img.width + "     height: " + img.height);
   } else { // canvas not supported
